@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Dashboard Layout */
+.todo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Add Task Box */
+.add-task-box {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    animation: fadeInLeft 1s ease;
+    transition: transform 0.3s ease;
+}
+.add-task-box:hover {
+    transform: scale(1.03);
+}
+
+.add-task-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.add-task-box input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+.add-task-box input:focus {
+    border-color: #a6c1ee;
+    box-shadow: 0 0 10px rgba(166, 193, 238, 0.5);
+    outline: none;
+}
+
+.add-task-box button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.add-task-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102,126,234,0.4);
+}
+
+/* Task List Box */
+.task-list-box {
+    flex: 2;
+    min-width: 400px;
+    background: #ffffffcc;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    animation: fadeInRight 1s ease;
+    transition: transform 0.3s ease;
+}
+.task-list-box:hover {
+    transform: scale(1.02);
+}
+
+.task-list-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #222;
+}
+
+/* Tasks */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-item {
+    background: white;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+}
+.todo-item:hover {
+    transform: scale(1.02);
+    background: #f1f5ff;
+}
+
+.completed-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff6a6a, #ffb347);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.8rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.delete-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(255,106,106,0.4);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.progress-bar-container {
+    width: 100%; /* full width of the parent box */
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    height: 12px; /* slightly smaller for aesthetics */
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; /* will be updated dynamically */
+    background-color: #3b82f6;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item {
+    animation: fadeSlideIn 0.5s ease forwards;
+}
+
+  

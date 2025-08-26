@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskZen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="todo.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 min-h-screen flex items-center justify-center p-6">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl p-8">
+    
+    <!-- Header -->
+    <div class="relative mb-6 text-center">
+        <!-- Logout button at top-right -->
+        <button onclick="logout()" 
+                class="absolute top-0 right-0 mt-3 mr-3 bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">
+          Logout
+        </button>
+    
+        <!-- Centered title and username -->
+        <div>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">My To-Do List</h1>
+            <p class="text-sm text-gray-500">
+                Logged in as user: 
+                <span id="userIdDisplay"
+                      class="font-mono bg-gray-200 text-gray-700 px-2 py-1 rounded-lg text-xs">Loading...</span>
+            </p>
+        </div>
+    </div>
+    
+    
+
+    <!-- To-Do Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Add Task Panel -->
+      <div class="bg-gradient-to-r from-green-200 to-green-300 p-6 rounded-2xl shadow-md">
+        <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">➕ Add a New Task</h2>
+        <div class="flex flex-col space-y-4">
+          <input type="text" id="taskInput"
+                 class="border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                 placeholder="Enter new task...">
+                
+          
+          
+        <select id="taskPriority" class="p-2 border rounded-lg mb-2 w-full">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <button id="addTaskButton"
+                  class="bg-green-500 text-white py-3 rounded-xl hover:bg-green-600 transition font-semibold">
+            Add Task
+          </button>
+
+        </div>
+      </div>
+      
+      
+      
+      <!-- Task List Panel -->
+      <div class="task-list-box">
+        <h2>Your Tasks</h2>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    
+        <ul id="taskList"></ul>
+    </div>
+    
+    </div>
+  </div>
+    
+  
+</body>
+</html>

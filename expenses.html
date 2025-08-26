@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Portal</title>
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+    <h1 class="text-3xl font-bold mb-4">Expense Tracker</h1>
+<input type="text" id="expenseDesc" placeholder="Description" class="w-96 p-2 border rounded-lg mb-2">
+<input type="number" id="expenseAmount" placeholder="Amount" class="w-96 p-2 border rounded-lg mb-2">
+<button id="addExpenseBtn" class="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 mb-2">Add Expense</button>
+<ul id="expenseList" class="space-y-2 w-96"></ul>
+<p class="font-semibold mt-2">Total: $<span id="totalExpense">0</span></p>
+
+<script src="expenses.js"></script>
+
+</body>
+</html>

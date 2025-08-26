@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 3 Goals - TaskZen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <h1 class="text-3xl font-bold mb-4">Top 3 Goals</h1>
+
+    <ul id="goalsList" class="space-y-2 mb-4 w-96">
+        <li><input type="text" placeholder="Goal 1" class="goal-input w-full p-2 border rounded-lg"></li>
+        <li><input type="text" placeholder="Goal 2" class="goal-input w-full p-2 border rounded-lg"></li>
+        <li><input type="text" placeholder="Goal 3" class="goal-input w-full p-2 border rounded-lg"></li>
+    </ul>
+    <button id="saveGoalsBtn" class="bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-600 mb-4">Save Goals</button>
+    <a href="index.html" class="text-blue-500 hover:underline">Back to To-Do</a>
+
+    <script src="goals.js"></script>
+</body>
+</html>

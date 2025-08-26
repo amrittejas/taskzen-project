@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+    margin: 0;
+}
+
+div.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+a {
+    display: inline-block;
+    width: 220px;
+    text-align: center;
+    font-weight: 600;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+a.bg-red-500 { background: #ef4444; color: #fff; }
+a.bg-red-500:hover { background: #dc2626; }
+
+a.bg-indigo-500 { background: #6366f1; color: #fff; }
+a.bg-indigo-500:hover { background: #4f46e5; }
+
+a.bg-yellow-500 { background: #f59e0b; color: #fff; }
+a.bg-yellow-500:hover { background: #d97706; }
+
+/* Logout Button */
+button {
+    background: #ef4444;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    a {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        text-align: center;
+    }
+}

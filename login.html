@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TaskZen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div class="flex flex-col items-center">
+    
+      
+    
+    <!-- App Heading -->
+    <div class="text-center mb-8">
+        <h1 class="top-heading text-4xl sm:text-5xl font-extrabold text-black">
+        TaskZen : Your Daily Tracker
+      </h1>
+      <p class="mt-2 text-lg sm:text-xl text-black font-extrabold ">
+        Secure · Fast · Reliable
+      </p>
+    </div>
+
+    <!-- Login Box -->
+    <div class="bg-white p-6 rounded-2xl shadow-md w-96">
+      <h1 class="text-2xl font-bold text-center mb-4">Login to TaskZen</h1>
+      <input id="username" type="text" placeholder="Enter Username"
+             class="w-full p-3 border rounded-xl mb-3 focus:ring focus:ring-blue-300 outline-none" />
+      <input id="password" type="password" placeholder="Enter Password"
+             class="w-full p-3 border rounded-xl mb-4 focus:ring focus:ring-blue-300 outline-none" />
+             <label class="flex items-center gap-2 mt-2">
+                <input type="checkbox" id="showPassword">
+                Show Password
+              </label><br>
+
+              
+      <button id="loginButton"
+              class="w-full bg-blue-500 text-white py-2 rounded-xl hover:bg-blue-600 transition">
+        Login
+      </button>
+      <p id="errorMsg" class="text-red-500 text-sm mt-2 hidden">Invalid username or password</p>
+    </div>
+    
+  </div>
+
+  <script>
+    document.getElementById("loginButton").addEventListener("click", () => {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+    
+        if (!username || !password) {
+            alert("Please enter both username and password");
+            return;
+        }
+    
+        const storedPass = localStorage.getItem("taskzen_user_" + username);
+    
+        if (storedPass) {
+            // Existing user: check password
+            if (storedPass === password) {
+                localStorage.setItem("username", username); // mark as logged in
+                window.location.href = "redirect.html";
+            } else {
+                document.getElementById("errorMsg").classList.remove("hidden");
+                document.getElementById("errorMsg").textContent = "Wrong password for this username";
+            }
+        } else {
+            // New user: register only if username not taken
+            // Optional: confirm with user before registering
+            if (confirm("This username is not registered. Create a new account?")) {
+                localStorage.setItem("taskzen_user_" + username, password);
+                localStorage.setItem("username", username);
+                window.location.href = "redirect.html";
+            }
+        }
+
+        
+    });
+    document.getElementById("showPassword").addEventListener("change", () => {
+        const pwdInput = document.getElementById("password");
+        pwdInput.type = pwdInput.type === "password" ? "text" : "password";
+    });
+    
+    </script>
+    
+    
+</body>
+</html>
